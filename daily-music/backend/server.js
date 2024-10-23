@@ -8,15 +8,56 @@ const PORT = 5000;
 app.use(cors()); // Enable CORS for all routes
 
 // Sample data to send to the frontend
-const sampleData = [
-  { id: 1, url: 'https://example1.com', info: 'Info about example 1' },
-  { id: 2, url: 'https://example2.com', info: 'Info about example 2' },
-  { id: 3, url: 'https://example3.com', info: 'Info about example 3' },
+const composers = [
+    { "id": 1,
+    "name": "Ludwig van Beethoven",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    { "id": 2,
+    "name": "Johann Sebastian Bach",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    { "id": 3,
+    "name": "Wolfgang Amadeus Mozart",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    { "id": 4,
+    "name": "Johannes Brahms",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    { "id": 5,
+    "name": "Richard Wagner",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    { "id": 6,
+    "name": "Claude Debussy",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    { "id": 7,
+    "name": "Pyotr Ilyich Tchaikovsky",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    { "id": 8,
+    "name": "Frédéric Chopin",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    { "id": 9,
+    "name": "Joseph Haydn",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    { "id": 10,
+    "name": "Antonio Vivaldi",
+    "description": "A German composer and pianist, considered one of the greatest composers of all time.",
+    "image": "https://example.com/images/beethoven.jpg"},
+    
 ];
 
 // Define a route to fetch data
-app.get('/api/data', (req, res) => {
-  res.json(sampleData); // Send the sample data as a JSON response
+app.get('/api/composer', (req, res) => {
+  
+    const randomIndex = Math.floor(Math.random() * composers.length);
+    const randomOption = composers[randomIndex];
+    res.json({ composers: randomOption });
 });
 
 // Start the server
