@@ -10,9 +10,12 @@ app.use(cors()); // Enable CORS for all routes
 // Sample data to send to the frontend
 const composers = [
     { "id": 1,
+    "years": "1770 - 1827",
+    "wikiLink": "https://en.wikipedia.org/wiki/Ludwig_van_Beethoven",
     "name": "Ludwig van Beethoven",
     "description": "A German composer and pianist, considered one of the greatest composers of all time.",
-    "image": "https://example.com/images/beethoven.jpg"},
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
+    "music": ["https://www.youtube.com/watch?v=4Tr0otuiQuU",  "https://www.youtube.com/watch?v=au4CUnM34N4", "https://www.youtube.com/watch?v=wfF0zHeU3Zs"]},
     { "id": 2,
     "name": "Johann Sebastian Bach",
     "description": "A German composer and pianist, considered one of the greatest composers of all time.",
@@ -56,7 +59,8 @@ const composers = [
 app.get('/api/composer', (req, res) => {
     const randomIndex = Math.floor(Math.random() * composers.length);
     const randomOption = composers[randomIndex];
-    res.json(randomOption);
+    // res.json(randomOption);
+    res.json(composers[0])
 });
 
 // Start the server

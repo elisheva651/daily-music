@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import MusicLinks from './MusicLinks'
 
 const App = () => {
   const [composer, setComposer] = useState([]);
@@ -24,26 +25,42 @@ const App = () => {
     fetchComposer();
   }, []);
 
+  const getVideoID = (url) => {
+    const urlParts = url.split("v=");
+    return urlParts[1]?.split("&")[0]; // Extract ID from "https://www.youtube.com/watch?v=ID"
+  };
+
   return (
     <div className="background" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <h1>{composer.name}</h1>
-        {/* <Card key={composer.name} sx={{ maxWidth: 345, margin: 2 }}>
+      {composer ? (
+        <Card key={composer.id} className="cards">
           <CardMedia
             component="img"
             alt={composer.name}
-            height="140"
-            image={composer.image} // Assuming each composer object has an 'image' property
+            height="200"
+            // transform: 'scale(0.7)'
+            sx = {{objectFit : 'contain'}}
+            image={composer.image} // Using the image from the composer object
           />
           <CardContent>
             <Typography variant="h5" component="div">
-              {composer.name} {/* Assuming each composer object has a 'name' property */}
-            {/* </Typography>
+              {composer.name}
+            </Typography>
             <Typography variant="body2" color="text.secondary">
-              {composer.description} {/* Assuming each composer object has a 'description' property */}
-            {/* </Typography>
-            <Button size="small">Learn More</Button> */}
-        {/* //   </CardContent> */}
-        {/* // </Card> */} 
+              {composer.description}
+            </Typography>
+            <MusicLinks composer={composer}/>
+            <a href={composer.wikiLink} target="_blank" rel="noopener noreferrer">
+              <button size="small">{composer.name} on Wikipedia</button>
+            </a>       
+            
+            </CardContent>
+        </Card>
+      ) : (
+        <Typography variant="body2" color="text.secondary">
+          Error. Load again. 
+        </Typography>
+      )}
     </div>
   );
 }
