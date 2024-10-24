@@ -54,10 +54,9 @@ const composers = [
 
 // Define a route to fetch data
 app.get('/api/composer', (req, res) => {
-  
     const randomIndex = Math.floor(Math.random() * composers.length);
     const randomOption = composers[randomIndex];
-    res.json({ composers: randomOption });
+    res.json(randomOption);
 });
 
 // Start the server

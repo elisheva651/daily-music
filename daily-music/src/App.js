@@ -26,25 +26,24 @@ const App = () => {
 
   return (
     <div className="background" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      {composer.map((comp, index) => (
-        <Card key={index} sx={{ maxWidth: 345, margin: 2 }}>
+      <h1>{composer.name}</h1>
+        {/* <Card key={composer.name} sx={{ maxWidth: 345, margin: 2 }}>
           <CardMedia
             component="img"
-            alt={comp.name}
+            alt={composer.name}
             height="140"
-            image={comp.image} // Assuming each composer object has an 'image' property
+            image={composer.image} // Assuming each composer object has an 'image' property
           />
           <CardContent>
             <Typography variant="h5" component="div">
-              {comp.name} {/* Assuming each composer object has a 'name' property */}
-            </Typography>
+              {composer.name} {/* Assuming each composer object has a 'name' property */}
+            {/* </Typography>
             <Typography variant="body2" color="text.secondary">
-              {comp.description} {/* Assuming each composer object has a 'description' property */}
-            </Typography>
-            <Button size="small">Learn More</Button>
-          </CardContent>
-        </Card>
-      ))}
+              {composer.description} {/* Assuming each composer object has a 'description' property */}
+            {/* </Typography>
+            <Button size="small">Learn More</Button> */}
+        {/* //   </CardContent> */}
+        {/* // </Card> */} 
     </div>
   );
 }
