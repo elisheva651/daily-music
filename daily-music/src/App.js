@@ -25,10 +25,6 @@ const App = () => {
     fetchComposer();
   }, []);
 
-  const getVideoID = (url) => {
-    const urlParts = url.split("v=");
-    return urlParts[1]?.split("&")[0]; // Extract ID from "https://www.youtube.com/watch?v=ID"
-  };
 
   return (
     <div className="background" style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -44,14 +40,16 @@ const App = () => {
           />
           <CardContent>
             <Typography variant="h5" component="div">
-              {composer.name}
+              {composer.name}<Typography variant="body2" component="div" style={{ marginTop: "4px" }}>
+              {composer.years}
+            </Typography>
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {composer.description}
             </Typography>
             <MusicLinks composer={composer}/>
             <a href={composer.wikiLink} target="_blank" rel="noopener noreferrer">
-              <button size="small">{composer.name} on Wikipedia</button>
+              <button size="small" style={{ marginTop: "20px" }}>{composer.name} on Wikipedia</button>
             </a>       
             
             </CardContent>
