@@ -16,7 +16,7 @@ const App = () => {
   useEffect(() => {
     const fetchComposer = async () => {
       try {
-        const API_URL = "https://your-heroku-app.herokuapp.com";
+        const API_URL = "https://daily-music.herokuapp.com";
         const response = await fetch('`${API_URL}/api/composer');
         const result = await response.json();
         setComposer(result);
