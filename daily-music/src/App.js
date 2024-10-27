@@ -11,10 +11,13 @@ import MusicLinks from './MusicLinks'
 const App = () => {
   const [composer, setComposer] = useState([]);
 
+
+  
   useEffect(() => {
     const fetchComposer = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/composer');
+        const API_URL = "https://your-heroku-app.herokuapp.com";
+        const response = await fetch('`${API_URL}/api/composer');
         const result = await response.json();
         setComposer(result);
       } catch (error) {
