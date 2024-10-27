@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     const fetchComposer = async () => {
       try {
-        const url = "https://your-project-name.up.railway.app"
+        const url = "https://daily-music.up.railway.app/"
         const response = await fetch('`${url}/api/composer');
         const result = await response.json();
         setComposer(result);

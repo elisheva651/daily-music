@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT | 5000;
+const PORT = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 app.use(cors()); // Enable CORS for all routes
 
@@ -71,11 +71,12 @@ const composers = [
 app.get('/api/composer', (req, res) => {
     const randomIndex = Math.floor(Math.random() * composers.length);
     const randomOption = composers[randomIndex];
+    console.log(`in api\ composer - Server is running on http://localhost:${PORT}`)
     res.json(randomOption);
     
 });
 
 // Start the server
-app.listen(PORT,  "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
