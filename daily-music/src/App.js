@@ -15,8 +15,8 @@ const App = () => {
   useEffect(() => {
     const fetchComposer = async () => {
       try {
-        const API_URL = "https://daily-music.herokuapp.com";
-        const response = await fetch('`${API_URL}/api/composer');
+        const url = "https://your-project-name.up.railway.app"
+        const response = await fetch('`${url}/api/composer');
         const result = await response.json();
         setComposer(result);
       } catch (error) {
