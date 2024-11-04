@@ -15,7 +15,8 @@ const App = () => {
   useEffect(() => {
     const fetchComposer = async () => {
       try {
-        const url = "https://daily-music.up.railway.app/"
+        // const url = "https://daily-music.up.railway.app/"
+        const url = "http://localhost:5000" || process.env.REACT_APP_API_URL
         const response = await fetch('`${url}/api/composer');
         const result = await response.json();
         setComposer(result);
