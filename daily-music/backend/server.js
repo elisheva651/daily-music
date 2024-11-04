@@ -72,6 +72,7 @@ app.get('/api/composer', (req, res) => {
     const randomIndex = Math.floor(Math.random() * composers.length);
     const randomOption = composers[randomIndex];
     // console.log(`in api\ composer - Server is running on http://localhost:${PORT}`)
+    console.log("in api/composer", randomIndex)
     res.json(randomOption);
     
 });

@@ -16,11 +16,15 @@ const App = () => {
     const fetchComposer = async () => {
       try {
         // const url = "https://daily-music.up.railway.app/"
+        console.log("start fetch")
         const url = process.env.REACT_APP_API_URL || "http://localhost:5000";
         const response = await fetch(`${url}/api/composer`);
         const result = await response.json();
+        console.log("result", result)
 
         setComposer([result]);
+        console.log('Composer:', composer);
+
       } catch (error) {
         console.error('Error fetching composer:', error);
       }
