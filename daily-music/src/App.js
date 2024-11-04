@@ -16,13 +16,15 @@ const App = () => {
     const fetchComposer = async () => {
       try {
         // const url = "https://daily-music.up.railway.app/"
-        const url = "http://localhost:5000" || process.env.REACT_APP_API_URL
-        const response = await fetch('`${url}/api/composer');
+        const url = process.env.REACT_APP_API_URL || "http://localhost:5000";
+        const response = await fetch(`${url}/api/composer`);
         const result = await response.json();
-        setComposer(result);
+
+        setComposer([result]);
       } catch (error) {
         console.error('Error fetching composer:', error);
       }
+      console.log("composer", composer)
     };
 
     fetchComposer();
@@ -31,28 +33,28 @@ const App = () => {
 
   return (
     <div className="background" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      {composer ? (
-        <Card key={composer.id} className="cards">
+      {composer && composer.length > 0? (
+        <Card key={composer[0].id} className="cards">
           <CardMedia
             component="img"
-            alt={composer.name}
+            alt={composer[0].name}
             height="200"
             // transform: 'scale(0.7)'
             sx = {{objectFit : 'contain'}}
-            image={composer.image} // Using the image from the composer object
+            image={composer[0].image} // Using the image from the composer object
           />
           <CardContent>
             <Typography variant="h5" component="div">
-              {composer.name}<Typography variant="body2" component="div" style={{ marginTop: "4px" }}>
-              {composer.years}
+              {composer[0].name}<Typography variant="body2" component="div" style={{ marginTop: "4px" }}>
+              {composer[0].years}
             </Typography>
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {composer.description}
+              {composer[0].description}
             </Typography>
-            <MusicLinks composer={composer}/>
-            <a href={composer.wikiLink} target="_blank" rel="noopener noreferrer">
-              <button size="small" style={{ marginTop: "20px" }}>{composer.name} on Wikipedia</button>
+            <MusicLinks composer={composer[0]}/>
+            <a href={composer[0].wikiLink} target="_blank" rel="noopener noreferrer">
+              <button size="small" style={{ marginTop: "20px" }}>{composer[0].name} on Wikipedia</button>
             </a>       
             
             </CardContent>
