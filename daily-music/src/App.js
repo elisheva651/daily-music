@@ -30,6 +30,8 @@ const App = () => {
       }
   
       // Logging the composer state (might not show updated value immediately)
+      console.error('Error fetching composer:', error.message || error);
+
       console.log("composer", composer);
     };
   
