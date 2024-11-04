@@ -27,10 +27,11 @@ const App = () => {
         setComposer([result]);
       } catch (error) {
         console.error('Error fetching composer:', error);
+        console.error('Error fetching composer:', error.message || error);
+
       }
   
       // Logging the composer state (might not show updated value immediately)
-      console.error('Error fetching composer:', error.message || error);
 
       console.log("composer", composer);
     };
