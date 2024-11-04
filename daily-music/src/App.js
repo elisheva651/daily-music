@@ -18,6 +18,9 @@ const App = () => {
         // const url = "https://daily-music.up.railway.app/"
         console.log("start fetch")
         const url = process.env.REACT_APP_API_URL || "http://localhost:5000";
+        console.log('Fetch URL:', url);
+        console.log('URL:', `${url}/api/composer`);
+
         const response = await fetch(`${url}/api/composer`);
         const result = await response.json();
         console.log("result", result)
