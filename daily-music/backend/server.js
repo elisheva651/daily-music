@@ -64,15 +64,13 @@ const composers = [
     "wikiLink": "https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Chopin",
     "description": "A Polish composer and virtuoso pianist of the Romantic period, who wrote primarily for solo piano.",
     "image":  "https://upload.wikimedia.org/wikipedia/commons/e/e8/Frederic_Chopin_photo.jpeg",
-    "music": ["https://www.youtube.com/watch?v=X92SXG9ZSag",  "https://www.youtube.com/watch?v=5quwubcctow", "https://www.youtube.com/watch?v=L1F3sHklg9k"]},
+    "music": ["https://www.youtube.com/watch?v=9E6b3swbnWg",  "https://www.youtube.com/watch?v=5quwubcctow", "https://www.youtube.com/watch?v=L1F3sHklg9k"]},
 ];
 
 // Define a route to fetch data
 app.get('/api/composer', (req, res) => {
     const randomIndex = Math.floor(Math.random() * composers.length);
     const randomOption = composers[randomIndex];
-    // console.log(`in api\ composer - Server is running on http://localhost:${PORT}`)
-    console.log("in api/composer", randomIndex)
     res.json(randomOption);
     
 });
