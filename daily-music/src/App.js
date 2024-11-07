@@ -41,6 +41,7 @@ const App = () => {
 
 
   return (
+    // ff
     <div className="background" style={{ backgroundImage: `url(${backgroundImage})` }}>
       {composer && composer.length > 0? (
         <Card key={composer[0].id} className="cards">
