@@ -9,7 +9,7 @@ import MusicLinks from './MusicLinks'
 
 const App = () => {
   const [composer, setComposer] = useState([]);
-
+  console.log({url: process.env.REACT_APP_API_URL})
 
   
   useEffect(() => {
@@ -22,26 +22,23 @@ const App = () => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-  
+        console.log({response})
         const result = await response.json();
         setComposer([result]);
       } catch (error) {
-        console.error('Error fetching composer:', error);
         console.error('Error fetching composer:', error.message || error);
 
       }
   
-      // Logging the composer state (might not show updated value immediately)
-
-      console.log("composer", composer);
     };
   
-    fetchComposer();
-  }, []);
+    fetchComposer();  
+    console.log("composer", composer);
 
+  }, []);
+  console.log({composer})
 
   return (
-    // ff
     <div className="background" style={{ backgroundImage: `url(${backgroundImage})` }}>
       {composer && composer.length > 0? (
         <Card key={composer[0].id} className="cards">
