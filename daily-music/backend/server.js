@@ -1,7 +1,7 @@
 // backend/server.js
-const express = require('express');
-const cors = require('cors');
-const {composers} = require('./constance.js')
+import express from 'express';
+import cors from 'cors';
+import { composers } from './constance.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 

@@ -1,4 +1,4 @@
-const composers = [
+export const composers = [
     { "id": 1,
     "years": "1770 - 1827",
     "wikiLink": "https://en.wikipedia.org/wiki/Ludwig_van_Beethoven",
@@ -57,5 +57,3 @@ const composers = [
     "music": ["https://www.youtube.com/watch?v=9E6b3swbnWg",  "https://www.youtube.com/watch?v=5quwubcctow", "https://www.youtube.com/watch?v=L1F3sHklg9k"]},
 ];
 
-
-module.exports = {composers}
