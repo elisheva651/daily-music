@@ -69,9 +69,12 @@ const composers = [
 
 // Define a route to fetch data
 app.get('/api/composer', (req, res) => {
+  console.log('invoke')
     const randomIndex = Math.floor(Math.random() * composers.length);
     const randomOption = composers[randomIndex];
-    res.json(randomOption);
+    console.log('randomOption')
+
+    res.status(200).json(randomOption);
     
 });
 
