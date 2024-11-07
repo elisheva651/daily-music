@@ -72,7 +72,7 @@ app.get('/api/composer', (req, res) => {
   console.log('invoke')
     const randomIndex = Math.floor(Math.random() * composers.length);
     const randomOption = composers[randomIndex];
-    console.log('randomOption')
+    console.log({randomOption})
 
     res.status(200).json(randomOption);
     
