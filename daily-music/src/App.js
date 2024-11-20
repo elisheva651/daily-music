@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     const fetchComposer = async () => {
       try {
-        const url = process.env.REACT_APP_API_URL || "http://localhost:5000";
+        const url =  "http://localhost:5000";
         const response = await fetch(`${url}/api/composer`);
   
         // Check if the response is okay (status code 200-299)
