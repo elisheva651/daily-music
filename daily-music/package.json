@@ -18,10 +18,8 @@
     "web-vitals": "^2.1.4",
     "webpack-dev-middleware": "^7.4.2"
   },
-  "homepage": "https://elisheva651.github.io/daily-music",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "CI=false react-scripts build",
     "test": "react-scripts test",
