@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/daily-music/static/css/main.4b19a215.css",
-    "main.js": "/daily-music/static/js/main.c4f0404b.js",
+    "main.js": "/daily-music/static/js/main.d5452c29.js",
     "static/js/453.0585f8f5.chunk.js": "/daily-music/static/js/453.0585f8f5.chunk.js",
     "static/media/vecteezy_music-notes-background-illustration_24294799.jpg": "/daily-music/static/media/vecteezy_music-notes-background-illustration_24294799.bfc23d8aa6f01fdb12f7.jpg",
     "index.html": "/daily-music/index.html",
     "main.4b19a215.css.map": "/daily-music/static/css/main.4b19a215.css.map",
-    "main.c4f0404b.js.map": "/daily-music/static/js/main.c4f0404b.js.map",
+    "main.d5452c29.js.map": "/daily-music/static/js/main.d5452c29.js.map",
     "453.0585f8f5.chunk.js.map": "/daily-music/static/js/453.0585f8f5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4b19a215.css",
-    "static/js/main.c4f0404b.js"
+    "static/js/main.d5452c29.js"
   ]
 }
