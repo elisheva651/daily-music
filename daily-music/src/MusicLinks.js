@@ -28,37 +28,26 @@ function MusicLinks({ composer }) {
   }, [composer.music]);
 
   return (
-    <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+    <div >
       {videoData.map((video, index) => (
-        <div
-          key={index}
-          style={{
-            width: "200px",
-            textAlign: "center",
-            border: "1px solid #ccc",
-            borderRadius: "8px",
-            overflow: "hidden",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <a
-            href={video.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <img
-              src={video.thumbnail}
-              alt={video.title}
-              style={{ width: "100%", height: "auto" }}
-            />
-            <p style={{ margin: "10px 0", fontWeight: "bold" }}>
-              {video.title}
-            </p>
-          </a>
-        </div>
-      ))}
-    </div>
+      <div key={index}  >
+        <a href={video.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "black" }}>
+        <img
+          className='card-media'
+          src={video.thumbnail}
+          alt={video.title}
+          />
+          <p>
+            {video.title}
+          </p>
+        </a>
+      </div>
+  ))}
+</div>
+
   );
 }
 

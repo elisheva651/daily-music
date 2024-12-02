@@ -21,19 +21,16 @@ const App = () => {
   
   return (
     <div className="background" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      {console.log("composer", composer)}
       {composer? (
-        <Card key={composer.id} className="cards">
-          <CardMedia
+        <Card key={composer.id} className="card" sx={{ background: "linear-gradient(135deg, #D3D3D3, white)" ,
+        boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.1)",
+      }} >
+          <CardMedia 
             component="img"
             alt={composer.name}
-            height="200"
-            // transform: 'scale(0.7)'
-            sx = {{objectFit : 'contain'}}
+            className='card-media'
             image={composer.image} // Using the image from the composer object
-          />
-          <CardContent>
-            <Typography variant="h5" component="div">
+          /><Typography variant="h5" component="div">
               {composer.name}<Typography variant="body2" component="div" style={{ marginTop: "4px" }}>
               {composer.years}
             </Typography>
@@ -41,6 +38,9 @@ const App = () => {
             <Typography variant="body2" color="text.secondary">
               {composer.description}
             </Typography>
+            Listen to {composer.name}:
+
+          <CardContent className="card" >
             <MusicLinks composer={composer}/>
             <a href={composer.wikiLink} target="_blank" rel="noopener noreferrer">
               <button size="small" style={{ marginTop: "20px" }}>{composer.name} on Wikipedia</button>
